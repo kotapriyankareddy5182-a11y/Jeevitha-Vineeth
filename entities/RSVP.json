@@ -1,0 +1,37 @@
+{
+  "name": "RSVP",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "guest_name": {
+        "type": "string",
+        "description": "Name of the guest"
+      },
+      "phone": {
+        "type": "string",
+        "description": "Phone number"
+      },
+      "attending": {
+        "type": "string",
+        "enum": [
+          "yes",
+          "no",
+          "maybe"
+        ],
+        "description": "Will you attend?"
+      },
+      "num_guests": {
+        "type": "number",
+        "description": "Number of guests attending"
+      },
+      "message": {
+        "type": "string",
+        "description": "Wishes for the couple"
+      }
+    },
+    "required": [
+      "guest_name",
+      "attending"
+    ]
+  }
+}
