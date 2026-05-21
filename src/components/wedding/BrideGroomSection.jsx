@@ -1,70 +1,80 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart } from 'lucide-react';
+import SectionReveal from './SectionReveal';
+import GoldDivider from './GoldDivider';
+import brideImg from '../../assets/bride.jpeg';
+import groomImg from '../../assets/groom.jpeg';
 
-const BRIDE_IMAGE = "https://media.base44.com/images/public/user_69993758bcf017a40f75448f/1d0b3b39a_image.png";
-const GROOM_IMAGE = "https://media.base44.com/images/public/user_69993758bcf017a40f75448f/c289b80f4_image.png";
+const SILK_BG = 'https://media.base44.com/images/public/6a041c87a355438a2f5ed1bd/b21742b0d_generated_3781031c.png';
 
-function PersonCard({ image, name, role, delay, imageClass = "object-cover" }) {
+function PersonCard({ image, name, parents, subtitle, delay = 0, altText }) {
   return (
-    <motion.div
-      className="flex flex-col items-center"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8, delay }}
-    >
-      <div className="relative">
-        {/* Decorative border */}
-        <div className="absolute -inset-3 rounded-full border-2 border-rose-200 border-dashed" />
-        <div className="w-44 h-44 sm:w-52 sm:h-52 rounded-full overflow-hidden border-4 border-white shadow-xl">
-          <img
-            src={image}
-            alt={name}
-            className={`w-full h-full ${imageClass}`}
-          />
-        </div>
+    <SectionReveal delay={delay} className="flex flex-col items-center">
+      {/* Decorative frame */}
+      <div className="relative mb-6">
+        <motion.div
+          animate={{ y: [0, -8, 0] }}
+          transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+          className="relative"
+        >
+          {/* Gold border ring */}
+          <div
+            className="w-48 h-48 md:w-56 md:h-56 rounded-full p-1.5 gold-border-shimmer"
+          >
+            <div className="w-full h-full rounded-full overflow-hidden border-2 border-secondary/30">
+              <img
+                src={image}
+                alt={altText}
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+          </div>
+        </motion.div>
       </div>
-      <h3 className="mt-6 font-script text-3xl sm:text-4xl text-rose-700">{name}</h3>
-      <p className="mt-1 font-serif text-sm tracking-[0.2em] uppercase text-rose-400">{role}</p>
-    </motion.div>
+
+      <h3 className="font-script text-4xl md:text-5xl mb-2 gold-shimmer-text">{name}</h3>
+      <p className="font-display text-base md:text-lg italic mb-1" style={{ color: 'rgba(232,213,163,0.7)' }}>{subtitle}</p>
+      <p className="font-body text-sm text-center max-w-xs" style={{ color: 'rgba(232,213,163,0.55)' }}>
+        {parents}
+      </p>
+    </SectionReveal>
   );
 }
 
 export default function BrideGroomSection() {
   return (
-    <section className="py-20 px-6 bg-gradient-to-b from-rose-50/50 to-white">
-      <motion.p
-        className="text-center font-serif text-sm tracking-[0.3em] uppercase text-rose-400 mb-12"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-      >
-        The Couple
-      </motion.p>
+    <section className="relative py-20 md:py-28 overflow-hidden">
+      {/* Silk Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img src="/gallery/bg-hands.png" alt="Couple Hands" className="w-full h-full object-cover" />
 
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-12 sm:gap-16 max-w-2xl mx-auto">
-        <PersonCard image={BRIDE_IMAGE} name="Prasanna" role="The Bride" delay={0.2} />
+      </div>
 
-        <motion.div
-          className="flex-shrink-0"
-          initial={{ opacity: 0, scale: 0 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5, type: "spring" }}
-        >
-          <div className="w-14 h-14 rounded-full bg-rose-100 flex items-center justify-center">
-            <Heart className="w-7 h-7 text-rose-500 fill-rose-500" />
-          </div>
-        </motion.div>
+      <div className="relative z-10 max-w-5xl mx-auto px-6">
+        <SectionReveal className="text-center mb-16">
+          <p className="font-body text-sm tracking-[0.3em] uppercase mb-3" style={{ color: 'rgba(232,213,163,0.7)' }}>The Couple</p>
+          <h2 className="font-display text-3xl md:text-4xl font-semibold gold-shimmer-text">Two Souls, One Journey</h2>
+          <GoldDivider className="mt-4" />
+        </SectionReveal>
 
-        <PersonCard 
-          image={GROOM_IMAGE} 
-          name="Ganesh Reddy" 
-          role="The Groom" 
-          delay={0.4} 
-          imageClass="object-cover object-top"
-        />
+        <div className="grid md:grid-cols-2 gap-16 md:gap-8">
+          <PersonCard
+            image={groomImg}
+            name="Vineeth Narayan Reddy"
+            subtitle="The Groom"
+
+            delay={0.1}
+            altText="Groom performing traditional South Indian wedding ritual"
+          />
+          <PersonCard
+            image={brideImg}
+            name="Jeevitha"
+            subtitle="The Bride"
+
+            delay={0.3}
+            altText="Bride's hands with henna and temple gold jewelry holding lotus"
+          />
+        </div>
       </div>
     </section>
   );

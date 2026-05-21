@@ -1,72 +1,99 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import heroBgImage from '../../assets/hero-bg.jpg';
 
-export default function HeroSection() {
-  return (
-    <section className="relative w-full min-h-screen flex flex-col items-center justify-center bg-[#f7ebeb] overflow-hidden">
-      
-      {/* Background Image Container */}
-      {/* On mobile, it covers the screen. On desktop, we limit the width to maintain the portrait aspect ratio of the card so it doesn't crop Ganesha or the couple. */}
-      <div className="absolute inset-0 w-full h-full flex justify-center items-center">
-         <img
-           src={heroBgImage}
-           alt="Wedding Background"
-           className="w-full h-full object-cover md:object-contain object-center"
-         />
-      </div>
+const TEMPLE_BG = 'https://media.base44.com/images/public/6a041c87a355438a2f5ed1bd/ea6eaa011_generated_eb0bf413.png';
 
-      {/* Content overlay in the middle */}
-      <div className="relative z-10 flex flex-col items-center justify-center text-center p-8 w-full max-w-lg mt-10 sm:mt-0">
-        
-        <motion.p
-          className="font-serif text-xs sm:text-sm tracking-[0.4em] uppercase text-rose-800 mb-4 sm:mb-6"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
-        >
-          We Invite You
-        </motion.p>
+export default function HeroSection({ onOpen }) {
+    return (
+        <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
+            {/* Background */}
+            <div className="absolute inset-0">
+                <img
+                    src={TEMPLE_BG}
+                    alt="Golden morning light hitting the intricate stone carvings of a Dravidian temple tower"
+                    className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-[#2A0808]/40 via-[#3A1010]/40 to-[#1A0505]/90" />
+            </div>
 
-        <motion.h1
-          className="font-script text-5xl sm:text-7xl text-rose-800 leading-tight drop-shadow-md"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 1, duration: 0.8 }}
-        >
-          Prasanna
-        </motion.h1>
 
-        <motion.div
-          className="flex items-center justify-center gap-3 my-2 sm:my-4 w-full"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.3 }}
-        >
-          <div className="h-[1px] w-12 bg-rose-400" />
-          <span className="font-script text-3xl sm:text-5xl text-rose-600 drop-shadow-sm">&</span>
-          <div className="h-[1px] w-12 bg-rose-400" />
-        </motion.div>
+            {/* Content */}
+            <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
+                className="relative z-20 text-center px-6"
+            >
+                <motion.p
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5, duration: 1 }}
+                    className="font-body text-sm md:text-base tracking-[0.3em] uppercase mb-6"
+                    style={{ color: '#E8D5A3' }}
+                >
+                    With the blessings of the Almighty
+                </motion.p>
 
-        <motion.h1
-          className="font-script text-5xl sm:text-7xl text-rose-800 leading-tight drop-shadow-md"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 1.5, duration: 0.8 }}
-        >
-          Ganesh Reddy
-        </motion.h1>
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.8, duration: 1.2 }}
+                    className="mb-4"
+                >
+                    <h1 className="font-script text-6xl md:text-8xl lg:text-9xl gold-shimmer-text leading-tight">
+                        Vineeth Narayan Reddy & Jeevitha
+                    </h1>
+                </motion.div>
 
-        <motion.div
-          className="mt-6 sm:mt-10 flex flex-col items-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2 }}
-        >
-          <p className="font-serif text-sm sm:text-base tracking-widest text-rose-900 uppercase font-bold bg-white/40 px-4 py-1 rounded-full backdrop-blur-sm">August 4 & 5, 2026</p>
-        </motion.div>
-      </div>
+                <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.2, duration: 1 }}
+                    className="font-display text-lg md:text-xl tracking-[0.2em] mb-2"
+                    style={{ color: '#E8D5A3' }}
+                >
+                    are getting married
+                </motion.p>
 
-    </section>
-  );
+                <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.5, duration: 1 }}
+                    className="font-body text-sm tracking-[0.15em] mb-12"
+                    style={{ color: '#C5A059' }}
+                >
+                    December 15, 2026 &middot; Chennai
+                </motion.p>
+
+                {/* Open Invitation button */}
+                <motion.button
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 2, duration: 0.8 }}
+                    onClick={onOpen}
+                    className="relative group cursor-pointer"
+                >
+                    <div
+                        className="px-10 py-4 rounded-sm font-display text-lg md:text-xl tracking-[0.15em] transition-all duration-500 border"
+                        style={{
+                            borderColor: '#C5A059',
+                            color: '#C5A059',
+                            background: 'rgba(197, 160, 89, 0.1)',
+                        }}
+                    >
+                        <span className="relative z-10">Open Invitation</span>
+                        <div
+                            className="absolute inset-0 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                            style={{
+                                boxShadow: '0 0 30px rgba(197, 160, 89, 0.5), inset 0 0 30px rgba(197, 160, 89, 0.1)',
+                            }}
+                        />
+                    </div>
+                </motion.button>
+            </motion.div>
+
+            {/* Bottom gradient */}
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10" />
+        </section>
+    );
 }
