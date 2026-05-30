@@ -4,7 +4,7 @@ import HeroSection from '../components/wedding/HeroSection';
 import NamesReveal from '../components/wedding/NamesReveal';
 import BrideGroomSection from '../components/wedding/BrideGroomSection';
 import EventsSection from '../components/wedding/EventsSection';
-import CountdownSection from '../components/wedding/CountdownSection';
+import CountDownSection from "../components/wedding/CountDownSection";
 import GallerySection from '../components/wedding/GallerySection';
 import LocationSection from '../components/wedding/LocationSection';
 import RSVPSection from '../components/wedding/RSVPSection';
