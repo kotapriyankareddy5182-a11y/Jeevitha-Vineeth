@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 
-const VEENA_IMAGE = 'https://media.base44.com/images/public/6a041c87a355438a2f5ed1bd/894bf2655_generated_fadd0c9e.png';
+const VEENA_IMAGE = '/images/diya_img.png';
 
 export default function AudioToggle() {
     const [isPlaying, setIsPlaying] = useState(false);

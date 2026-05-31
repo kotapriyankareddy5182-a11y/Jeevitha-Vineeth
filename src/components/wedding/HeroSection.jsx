@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const TEMPLE_BG = 'https://media.base44.com/images/public/6a041c87a355438a2f5ed1bd/ea6eaa011_generated_eb0bf413.png';
+const TEMPLE_BG = '/images/temple-custom.jpg';
 
 export default function HeroSection({ onOpen }) {
     return (

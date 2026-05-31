@@ -4,9 +4,9 @@ import { base44 } from '@/api/base44Client';
 import SectionReveal from './SectionReveal';
 import GoldDivider from './GoldDivider';
 
-const BLESSING_IMG = 'https://media.base44.com/images/public/6a041c87a355438a2f5ed1bd/fa690882d_generated_29b3bfe2.png';
-const STAGE_BG = 'https://media.base44.com/images/public/6a041c87a355438a2f5ed1bd/7aa127059_generated_f93ada1a.png';
-const RICE_IMG = 'https://media.base44.com/images/public/6a041c87a355438a2f5ed1bd/6f942a2cf_generated_3caba513.png';
+const BLESSING_IMG = '/images/blessing_img.png';
+const STAGE_BG = '/images/stage_bg.png';
+const RICE_IMG = '/images/rice_img.png';
 
 export default function RSVPSection() {
   const [form, setForm] = useState({
@@ -35,10 +35,7 @@ export default function RSVPSection() {
   return (
     <section className="relative py-20 md:py-28 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0">
-        <img src={STAGE_BG} alt="Wedding stage decorations" className="w-full h-full object-cover" />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(253,245,230,0.94), rgba(253,245,230,0.90))' }} />
-      </div>
+      <div className="absolute inset-0" style={{ background: '#FDF5E6' }} />
 
       <div className="relative z-10 max-w-xl mx-auto px-6">
         <SectionReveal className="text-center mb-12">

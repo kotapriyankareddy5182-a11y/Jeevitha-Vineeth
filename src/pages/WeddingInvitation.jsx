@@ -11,7 +11,7 @@ import RSVPSection from '../components/wedding/RSVPSection';
 import FinalBlessing from '../components/wedding/FinalBlessing';
 import FallingPetals from '../components/wedding/FallingPetals';
 import AudioToggle from '../components/wedding/AudioToggle';
-import MiddleImageSection from '../components/wedding/MiddleImageSection';
+
 import AutoScroll from '../components/wedding/AutoScroll';
 
 export default function WeddingInvitation() {
@@ -49,9 +49,9 @@ export default function WeddingInvitation() {
             <AutoScroll />
             <NamesReveal />
             <BrideGroomSection />
-            <MiddleImageSection />
+
             <EventsSection />
-            <CountdownSection />
+            <CountDownSection />
             <GallerySection />
             <LocationSection />
             <RSVPSection />

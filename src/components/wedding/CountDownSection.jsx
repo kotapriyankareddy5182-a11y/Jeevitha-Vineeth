@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import SectionReveal from './SectionReveal';
 
 const MANDAP_BG = 'https://5.imimg.com/data5/SELLER/Default/2022/2/DE/FB/KR/141944225/4035-12-7-mbox-45.jpg';
-const DIYA_IMG = 'https://media.base44.com/images/public/6a041c87a355438a2f5ed1bd/894bf2655_generated_fadd0c9e.png';
+const DIYA_IMG = '/images/diya_img.png';
 
 const WEDDING_DATE = new Date('2026-12-14T06:30:00');
 

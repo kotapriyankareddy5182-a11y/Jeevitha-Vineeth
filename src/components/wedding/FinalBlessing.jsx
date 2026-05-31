@@ -1,8 +1,8 @@
 import React from 'react';
 import SectionReveal from './SectionReveal';
 
-const TEMPLE_BG = 'https://media.base44.com/images/public/6a041c87a355438a2f5ed1bd/ea6eaa011_generated_eb0bf413.png';
-const DIYA_IMG = 'https://media.base44.com/images/public/6a041c87a355438a2f5ed1bd/894bf2655_generated_fadd0c9e.png';
+const TEMPLE_BG = '/images/temple-custom.jpg';
+const DIYA_IMG = '/images/diya_img.png';
 
 export default function FinalBlessing() {
     return (

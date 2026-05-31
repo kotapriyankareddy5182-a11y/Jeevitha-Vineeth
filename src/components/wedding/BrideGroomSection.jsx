@@ -5,7 +5,7 @@ import GoldDivider from './GoldDivider';
 import brideImg from '../../assets/bride.jpeg';
 import groomImg from '../../assets/groom.jpeg';
 
-const SILK_BG = 'https://media.base44.com/images/public/6a041c87a355438a2f5ed1bd/b21742b0d_generated_3781031c.png';
+const SILK_BG = '/images/silk_bg.png';
 
 function PersonCard({ image, name, parents, subtitle, delay = 0, altText }) {
   return (
@@ -44,10 +44,10 @@ function PersonCard({ image, name, parents, subtitle, delay = 0, altText }) {
 export default function BrideGroomSection() {
   return (
     <section className="relative py-20 md:py-28 overflow-hidden">
-      {/* Silk Background Image */}
+      {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <img src="/gallery/bg-hands.png" alt="Couple Hands" className="w-full h-full object-cover" />
-
+        <img src="/images/bridegroom-bg.jpg" alt="Bride and Groom Background" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1A0505]/95 via-[#2A0808]/70 to-[#1A0505]/95" />
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-6">

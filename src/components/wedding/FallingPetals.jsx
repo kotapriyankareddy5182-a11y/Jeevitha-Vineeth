@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react';
 
 const PETAL_IMAGES = [
-  'https://media.base44.com/images/public/6a041c87a355438a2f5ed1bd/d4217b2f1_generated_image.png', // jasmine
-  'https://media.base44.com/images/public/6a041c87a355438a2f5ed1bd/0ac0d669d_generated_image.png', // rose
-  'https://media.base44.com/images/public/6a041c87a355438a2f5ed1bd/2a6fa17b0_generated_image.png', // marigold
+  'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22white%22%20d%3D%22M12%2C2C12%2C2%2018%2C10%2018%2C16C18%2C19.31%2015.31%2C22%2012%2C22C8.69%2C22%206%2C19.31%2C6%2C16C6%2C10%2012%2C2%2012%2C2Z%22%2F%3E%3C%2Fsvg%3E', // jasmine
+  'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22red%22%20d%3D%22M12%2C2C12%2C2%2018%2C10%2018%2C16C18%2C19.31%2015.31%2C22%2012%2C22C8.69%2C22%206%2C19.31%2C6%2C16C6%2C10%2012%2C2%2012%2C2Z%22%2F%3E%3C%2Fsvg%3E', // rose
+  'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22orange%22%20d%3D%22M12%2C2C12%2C2%2018%2C10%2018%2C16C18%2C19.31%2015.31%2C22%2012%2C22C8.69%2C22%206%2C19.31%2C6%2C16C6%2C10%2012%2C2%2012%2C2Z%22%2F%3E%3C%2Fsvg%3E', // marigold
 ];
 
 const ALT_TEXTS = ['Jasmine petal', 'Rose petal', 'Marigold petal'];
